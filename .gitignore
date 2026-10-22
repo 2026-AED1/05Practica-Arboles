@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+
+# Editores e IDEs
+.vscode/
+.vs/
+.idea/
+*.iml
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Ficheros de bloqueo de Office
+~$*
+
+# C++
+*.o
+*.exe
+*.out
+cpp/test_arbol
+cpp/solucion/test_arbol
