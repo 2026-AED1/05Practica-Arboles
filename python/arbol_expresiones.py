@@ -120,6 +120,11 @@ class ArbolExpresion:
         # TODO
         raise NotImplementedError
 
+    def num_internos(self):
+        # Coste: O(?)
+        # TODO
+        raise NotImplementedError
+    
     # --- Ampliacion (opcional) ----------------------------------------------
     def infija_minima(self):
         # Coste: O(?)      (3 + 4) * 2  ->  "(3 + 4) * 2"

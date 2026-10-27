@@ -166,6 +166,21 @@ class PruebasMetricas(PruebaBase):
             a = ArbolExpresion(p)
             self.assertEqual(a.num_hojas(), a.num_nodos() - a.num_hojas() + 1, p)
 
+    def test_num_internos(self):
+        # Nodos internos = operadores; las hojas (numeros) no cuentan
+        self.assertEqual(ArbolExpresion().num_internos(), 0)
+        self.assertEqual(ArbolExpresion("5").num_internos(), 0)
+        self.assertEqual(ArbolExpresion("3 4 +").num_internos(), 1)
+        self.assertEqual(ArbolExpresion("3 4 + 2 *").num_internos(), 2)
+        self.assertEqual(ArbolExpresion("1 2 + 3 + 4 + 5 +").num_internos(), 4)
+        self.assertEqual(ArbolExpresion("5 1 2 + 4 * + 3 -").num_internos(), 4)
+
+    def test_internos_mas_hojas_igual_a_nodos(self):
+        for p in ["7", "1 2 +", "1 2 + 3 4 - *", "9 8 7 6 5 + + + +"]:
+            a = ArbolExpresion(p)
+            self.assertEqual(a.num_internos() + a.num_hojas(), a.num_nodos(), p)
+            self.assertEqual(a.num_hojas(), a.num_internos() + 1, p)
+
 
 class PruebasAmpliacion(PruebaBase):
     def test_infija_minima(self):

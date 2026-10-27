@@ -14,6 +14,7 @@ Deben coincidir con los `O(?)` que has sustituido en el código. *n* es el núme
 | `num_nodos()` (ya hecho) | O(n) | |
 | `altura()` | | |
 | `num_hojas()` | | |
+| `num_internos()` | | |
 
 ## 2 · Preguntas
 

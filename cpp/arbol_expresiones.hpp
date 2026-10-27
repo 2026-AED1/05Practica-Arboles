@@ -96,6 +96,8 @@ public:
     int altura() const { throw std::logic_error("TODO altura"); }
     // Coste: O(?)
     int num_hojas() const { throw std::logic_error("TODO num_hojas"); }
+    // Coste: O(?)
+    int num_internos() const { throw std::logic_error("TODO num_internos"); }
 
     // --- Ampliacion (opcional) --------------------------------------------
     // (3 + 4) * 2 -> "(3 + 4) * 2"     8 - (4 - 1) -> "8 - (4 - 1)"

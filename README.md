@@ -81,7 +81,7 @@ Completa los métodos marcados con `TODO` **en este orden** y ejecuta el grupo d
 | 1 | `construir(postfija)` | `python3 -m unittest -v test_arbol_expresiones.PruebasConstruccion` |
 | 2 | `evaluar()` | `... test_arbol_expresiones.PruebasEvaluacion` |
 | 3 | `prefija()`, `infija()`, `postfija()` | `... test_arbol_expresiones.PruebasNotaciones` |
-| 4 | `altura()`, `num_hojas()` | `... test_arbol_expresiones.PruebasMetricas` |
+| 4 | `altura()`, `num_hojas()`, `num_internos()`| `... test_arbol_expresiones.PruebasMetricas` |
 
 Algunas indicaciones:
 
@@ -102,20 +102,6 @@ Antes de entregar:
 
 - [ ] `python3 -m unittest -v test_arbol_expresiones` pasa (las pruebas de la ampliación salen como *skipped* si no la haces).
 - [ ] No queda ningún `O(?)` en el código.
-
-## Evaluación
-
-| Criterio | Dónde | Puntuación |
-|----------|-------|------------|
-| 1: `construir` | clase | 3.0 |
-| 2: `evaluar` | clase | 2.0 |
-| 3: las tres notaciones | clase | 2.0 |
-| 4: `altura` y `num_hojas` | clase / casa | 2.0 |
-| `RESPUESTAS.md` | casa | 0.5 |
-| Test individual de cierre de sesión | clase | 0.5 |
-| **Total** | | **10.0** |
-
-**Entrega**: un `.zip` con `arbol_expresiones.py` y `RESPUESTAS.md`.
 
 ---
 

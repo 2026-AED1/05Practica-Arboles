@@ -143,6 +143,24 @@ PRUEBA(PruebasMetricas, degenerado) {
     COMPROBAR(ArbolExpresion("1 2 + 3 + 4 + 5 +").altura() == 4, "1 + 2 + 3 + 4 + 5");
 }
 
+PRUEBA(PruebasMetricas, num_internos) {
+    // Nodos internos = operadores; las hojas (numeros) no cuentan
+    COMPROBAR(ArbolExpresion().num_internos() == 0, "arbol vacio");
+    COMPROBAR(ArbolExpresion("5").num_internos() == 0, "una hoja");
+    COMPROBAR(ArbolExpresion("3 4 +").num_internos() == 1, "3 + 4");
+    COMPROBAR(ArbolExpresion("3 4 + 2 *").num_internos() == 2, "(3 + 4) * 2");
+    COMPROBAR(ArbolExpresion("1 2 + 3 + 4 + 5 +").num_internos() == 4, "1 + 2 + 3 + 4 + 5");
+    COMPROBAR(ArbolExpresion("5 1 2 + 4 * + 3 -").num_internos() == 4, "5 + (1 + 2) * 4 - 3");
+}
+
+PRUEBA(PruebasMetricas, internos_mas_hojas_igual_a_nodos) {
+    for (string p : {"7", "1 2 +", "1 2 + 3 4 - *", "9 8 7 6 5 + + + +"}) {
+        ArbolExpresion a(p);
+        COMPROBAR(a.num_internos() + a.num_hojas() == a.num_nodos(), "internos + hojas == nodos: " + p);
+        COMPROBAR(a.num_hojas() == a.num_internos() + 1, "hojas == internos + 1: " + p);
+    }
+}
+
 // ---------------------------------------------------------------- memoria
 
 PRUEBA(PruebasMemoria, sin_fugas) {
